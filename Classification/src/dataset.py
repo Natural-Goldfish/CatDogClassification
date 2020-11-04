@@ -3,15 +3,12 @@ from src.data_argumentation import *
 import os
 import json
 
-_IMG_PATH = "data\\images"
-_ANNOTATION_PATH = "data\\annotations"
-
 class CatDogDataset(Dataset):
-    def __init__(self, mode = "train"):
+    def __init__(self, mode, img_path, annotation_path):
         super().__init__()
         self.mode = mode
-        self.img_path = _IMG_PATH
-        self.anno_path = _ANNOTATION_PATH
+        self.img_path = img_path
+        self.anno_path = annotation_path
         self.class_name = ["cat", "dog"]
         self.length = len(os.listdir(os.path.join(self.img_path, self.mode)))
 
@@ -30,8 +27,3 @@ class CatDogDataset(Dataset):
             else :
                 transforms = Transforms([Resize(), Normalize(), Numpy2Tensor()])
         return transforms((image, label))
-
-if __name__ == "__main__" :
-    dataset = CatDogDataset()
-    data = dataset[5000]
-    print(data[1])

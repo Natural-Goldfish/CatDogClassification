@@ -1,41 +1,41 @@
 from src.dataset import CatDogDataset
-from src.network import *
-from src.utils import accuracy
+from src.utils import *
 from torch.utils.data import DataLoader
+from torch.utils.tensorboard import SummaryWriter
 import os
 
-
-_EPOCH = 400
-_BATCH_SIZE = 64
-_LEARNING_RATE = 0.001
-_MOMENTUM = 0.9
 _CUDA_FLAG = torch.cuda.is_available()
 
-_SAVE_PATH = "data\\models"
+    
+def train(args):
+    train_dataset = CatDogDataset(mode = "train", img_path = args.img_path, annotation_path = args.annotation_path)
+    test_dataset = CatDogDataset(mode = "test", img_path = args.img_path, annotation_path = args.annotation_path)
+    train_dataloader = DataLoader(train_dataset, batch_size= args.batch_size, shuffle= True)
+    test_dataloader = DataLoader(test_dataset, batch_size= args.batch_size, shuffle= False)
 
-def train():
-    train_dataset = CatDogDataset(mode = "train")
-    val_dataset = CatDogDataset(mode = "val")
+    # For record accuracy and loss on the tensorboard
+    writer = SummaryWriter("{}".format(MODELS[args.models]))
 
-    train_dataloader = DataLoader(train_dataset, batch_size= _BATCH_SIZE, shuffle= True)
-    val_dataloader = DataLoader(val_dataset, batch_size= _BATCH_SIZE, shuffle= False)
-
-    model = CatDogClassifer()
-    #model.apply(weights_init)
+    # Load model and initialize
+    model = load_model_class(args.models)
+    if args.model_load_flag :
+        model.load_state_dict(torch.load(os.path.join(args.model_path, args.pre_trained_model_name)))
 
     if _CUDA_FLAG : model.cuda()
 
-    criterion = torch.nn.CrossEntropyLoss().cuda()
+    criterion = torch.nn.CrossEntropyLoss()
+    optimizer = torch.optim.SGD(model.parameters(), lr = args.learning_rate, momentum = args.momentum)
     sigmoid = torch.nn.Sigmoid()
-    optimizer = torch.optim.SGD(model.parameters(), lr = _LEARNING_RATE, momentum = _MOMENTUM)
     
-    for cur_epoch in range(_EPOCH):
+    for cur_epoch in range(args.epoch):
         # Training
         model.train()
+        train_total_loss = 0.0
+        train_accuracy = 0.0
         for cur_batch, train_data in enumerate(train_dataloader):
-            
             optimizer.zero_grad()
             train_images, train_labels = train_data
+
             if _CUDA_FLAG :
                 train_images = train_images.cuda()
                 train_labels = train_labels.view(-1).cuda()
@@ -45,31 +45,34 @@ def train():
             train_loss.backward()
             optimizer.step()
 
-            train_accuracy = accuracy(sigmoid(train_outputs.cpu().detach()), train_labels.cpu().detach())
-            print("EPOCH {}/{} Iteration {}/{} Loss {} Accuracy {}".format(cur_epoch, _EPOCH, cur_batch, len(train_dataloader), train_loss, train_accuracy))
+            train_total_loss += train_loss.detach()
+            train_accuracy += accuracy(sigmoid(train_outputs.cpu().detach()), train_labels.cpu().detach())
+        # Calculate loss and accuracy about a epoch
+        train_total_loss = train_total_loss/len(train_dataloader)
+        train_accuracy = train_accuracy/len(train_dataloader)
+        print("TRAIN:: EPOCH {}/{} Loss {} Accuracy {}".format(cur_epoch, args.epoch, train_total_loss, train_accuracy))
 
-        # Evaluation
+        # Testing
         model.eval()
         with torch.no_grad():
-            val_loss = 0
-            val_accuracy = 0
-            for cur_batch, val_data in enumerate(val_dataloader):
-                val_images, val_labels = val_data
+            test_total_loss = 0.0
+            test_accuracy = 0.0
+            for cur_batch, test_data in enumerate(test_dataloader):
+                test_images, test_labels = test_data
+
                 if _CUDA_FLAG :
-                    val_images = val_images.cuda()
-                    val_labels = val_labels.view(-1).cuda()
+                    test_images = test_images.cuda()
+                    test_labels = test_labels.view(-1).cuda()
 
-                val_outputs = model(val_images)
-                val_loss += criterion(val_outputs, val_labels)
-                val_accuracy += accuracy(sigmoid(val_outputs.cpu().detach()), val_labels.cpu().detach())
-
+                test_outputs = model(test_images)
+                test_total_loss += criterion(test_outputs, test_labels)
+                test_accuracy += accuracy(sigmoid(test_outputs.cpu().detach()), test_labels.cpu().detach())
             # Calculate loss and accuracy about a epoch
-            val_loss = val_loss/len(val_dataloader)
-            val_accuracy = val_accuracy/len(val_dataloader)
-            print("EPOCH {}/{} Loss {} Accuracy {}".format(cur_epoch, _EPOCH, val_loss, val_accuracy))
+            test_total_loss = test_total_loss/len(test_dataloader)
+            test_accuracy = test_accuracy/len(test_dataloader)
+            print("TEST:: EPOCH {}/{} Loss {} Accuracy {}".format(cur_epoch, args.epoch, test_total_loss, test_accuracy))
 
-        model_name = "CatDogClassifer_{}_checkpoint.pth".format(cur_epoch)
-        torch.save(model.state_dict, os.path.join(_SAVE_PATH, model_name))
-
-if __name__ == "__main__":
-    train()
+        model_name = "{}_{}_checkpoint.pth".format(_MODELS[args.models], cur_epoch)
+        torch.save(model.state_dict(), os.path.join(args.model_path, model_name))
+        writer.add_scalars("Loss", {"Train" : train_total_loss, "Test" : test_total_loss}, cur_epoch)
+        writer.add_scalars("Accuracy", {"Train" : train_accuracy, "Test" : test_accuracy}, cur_epoch)
