@@ -67,12 +67,7 @@ This show how my project files stored. The structure looks like below :
     │   │   ├──test_annotation.json
     │   │   └──train_annotation.json
     │   ├──models
-    │   │   ├──CatDogClassifier_2l_{epoch}_checkpoint.pth
-    │   │   ├──CatDogClassifier_3l_{epoch}_checkpoint.pth
-    │   │   ├──CatDogClassifier_4l_{epoch}_checkpoint.pth
-    │   │   ├──CatDogClassifier_5l_{epoch}_checkpoint.pth
-    │   │   ├──CatDogClassifier_5l_bn_{epoch}_checkpoint.pth
-    │   │   ├──CatDogClassifier_6l_{epoch}_checkpoint.pth
+    │   │   ├──CatDogClassifier_{layer}_{epoch}_checkpoint.pth
     │   │   └──Vgg16_{epoch}_checkpoint.pth
     │   └──samples
     │       ├──sample_0.jpg
