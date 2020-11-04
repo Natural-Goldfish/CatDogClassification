@@ -88,21 +88,60 @@ This show how my project files stored. The structure looks like below :
 </br></br>
 
 # Dataset  
-I used  _"[Simpsons Faces](https://www.kaggle.com/kostastokis/simpsons-faces)"_ dataset in Kaggle. The dataset structure looks like below :  
+I used  _"[Simpsons Faces](https://www.kaggle.com/tongpython/cat-and-dog)"_ dataset in Kaggle. The dataset structure looks like below :  
 
 ```
     Dataset
-    ├──cropped
-    │   ├──1.png
-    │   ├──2.png
-    │   └──...
-    └──simplified
-        ├──1.png
-        ├──2.png
-        └──...  
+    ├──test_set
+    │   └──test_set    
+    │      ├──cats
+    │      │   ├──_DS_Store
+    │      │   ├──cat.4001.jpg
+    │      │   ├──cat.4002.jpg
+    │      │   └──...
+    │      └──dogs
+    │          ├──_DS_Store
+    │          ├──dog.4001.jpg
+    │          ├──dog.4002.jpg
+    │          └──...
+    │      
+    └──training_set
+        └──training_set   
+           ├──cats
+           │   ├──_DS_Store
+           │   ├──cat.1.jpg
+           │   ├──cat.2.jpg
+           │   └──...
+           └──dogs
+               ├──_DS_Store
+               ├──dog.1.jpg
+               ├──dog.2.jpg
+               └──...
 ```  
-
-In this project, only the cropped images are used and are put into _``` 'data\images' ```_
+In order to make this structure simple and make annotation files for training, I used _make_annotation.py_
+The annotation file written by json have three imformation of images, which are identification, class name and image size(height and width)
+```
+[
+    {
+        "id" : 0,
+        "class_name" : "cat",
+        "image_size" : {
+            "height" : 415,
+            "width" : 498
+        }
+    },
+    {
+        "id": 1,
+        "class_name": "cat",
+        "image_size": {
+            "height": 499,
+            "width": 375
+        }
+    },
+    ...
+]
+```
+This is an example of the _test_annotation.json_. _train_annotation.json_ also has same structure.
 These are cropped images, so you don't need to additional working to make a dataset for training.</br></br>
 <p align="center"><img src='https://github.com/Natural-Goldfish/SimpsonGenerator/blob/master/SimpsonGenerator/data/images/1.png' width = "200px" height = "200px"/>
 <img src='https://github.com/Natural-Goldfish/SimpsonGenerator/blob/master/SimpsonGenerator/data/images/4.png' width = "200px" height = "200px"/>
