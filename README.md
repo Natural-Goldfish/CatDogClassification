@@ -29,7 +29,7 @@
 </br></br>
 
 # Project Structure  
-This show how my project files stored. The structure looks like below :  
+This will help you understand where the code files exist and where the data, kind of images and weights, are stored. The structure looks like below :  
 ```
     Classification
     ├──data
