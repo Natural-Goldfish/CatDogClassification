@@ -240,7 +240,7 @@ Some test images are randomly selected and shown below :</br></br>
   
 - **Prediction**  
 
-| Model | Sample_0.jpg | Sample_1.jpg | Sample_2.jpg | Sample_3.jpg | Sample_6.jpg | Sample_7.jpg | Sample_8.jpg | Sample_9.jpg |  
+| Model | Img0.jpg | Img1.jpg | Img2.jpg | Img3.jpg | Img4.jpg | Img5.jpg | Img6.jpg | Img7.jpg |  
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | A | Dog | Cat | Dog | Dog | Dog | Dog | Dog | Dog |
 | B | Dog | Cat | Cat | Dog | Dog | Dog | Dog | Dog |
@@ -252,7 +252,7 @@ Some test images are randomly selected and shown below :</br></br>
 
 - **Confidence**  
 
-| Model | Sample_0.jpg | Sample_1.jpg | Sample_2.jpg | Sample_3.jpg | Sample_6.jpg | Sample_7.jpg | Sample_8.jpg | Sample_9.jpg |  
+| Model | Img0.jpg | Img1.jpg | Img2.jpg | Img3.jpg | Img4.jpg | Img5.jpg | Img6.jpg | Img7.jpg |  
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | A | 63.09% | 87.94% | 54.46% | 78.21% | 64.54% | 51.60% | 57.46% | 71.02% |
 | B | 84.18% | 92.88% | 62.08% | 78.89% | 68.77% | 79.57% | 89.75% | 79.37% |
