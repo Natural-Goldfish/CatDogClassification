@@ -189,7 +189,9 @@ I trained the models for different epochs each with _64 batch size_. The highest
 | F | 21 | 92% |  
 | G | 43 | 88% |  
 
-The training loss and accuracy curves for each experiment are shown below:  
+The training loss and accuracy curves for each experiment are shown below :  
+Red line  : Test  
+Blue line : Train  
 - **2-Layers(A)**  
 <p align="center"><img src = 'https://github.com/Natural-Goldfish/CatDogClassification/blob/master/README/2l_accuracy-52%20epoch.PNG?raw=true' width = "800px" height = "200px"/>
 <img src = 'https://github.com/Natural-Goldfish/CatDogClassification/blob/master/README/2l_loss-52%20epoch.PNG?raw=true' width = "800px" height = "200px"/>
