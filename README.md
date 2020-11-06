@@ -227,16 +227,16 @@ The training loss and accuracy curves for each experiment are shown below:
 </br></br>
 
 # Results  
-Some generated images are shown below :</br></br>
-<p align="center"><img src='https://github.com/Natural-Goldfish/SimpsonGenerator/blob/master/SimpsonGenerator/data/generated_images/Generated_img0.jpg' width = "100px" height = "100px"/>
-<img src='https://github.com/Natural-Goldfish/SimpsonGenerator/blob/master/SimpsonGenerator/data/generated_images/Generated_img2.jpg' width = "100px" height = "100px"/>
-<img src='https://github.com/Natural-Goldfish/SimpsonGenerator/blob/master/SimpsonGenerator/data/generated_images/Generated_img3.jpg' width = "100px" height = "100px"/>
-<img src='https://github.com/Natural-Goldfish/SimpsonGenerator/blob/master/SimpsonGenerator/data/generated_images/Generated_img4.jpg' width = "100px" height = "100px"/>
-<img src='https://github.com/Natural-Goldfish/SimpsonGenerator/blob/master/SimpsonGenerator/data/generated_images/Generated_img5.jpg' width = "100px" height = "100px"/>
-<img src='https://github.com/Natural-Goldfish/SimpsonGenerator/blob/master/SimpsonGenerator/data/generated_images/Generated_img6.jpg' width = "100px" height = "100px"/>
-<img src='https://github.com/Natural-Goldfish/SimpsonGenerator/blob/master/SimpsonGenerator/data/generated_images/Generated_img7.jpg' width = "100px" height = "100px"/>
-<img src='https://github.com/Natural-Goldfish/SimpsonGenerator/blob/master/SimpsonGenerator/data/generated_images/Generated_img8.jpg' width = "100px" height = "100px"/>
-<img src='https://github.com/Natural-Goldfish/SimpsonGenerator/blob/master/SimpsonGenerator/data/generated_images/Generated_img9.jpg" width = "100px" height = "100px"/></p>
+Some test images are randomly selected and shown below :</br></br>
+<p align="center"><img src='https://github.com/Natural-Goldfish/CatDogClassification/blob/master/Classification/data/samples/sample_0.jpg?raw=true' width = "200px" height = "200px"/>
+<img src='https://github.com/Natural-Goldfish/CatDogClassification/blob/master/Classification/data/samples/sample_1.jpg?raw=true' width = "200px" height = "200px"/>
+<img src='https://github.com/Natural-Goldfish/CatDogClassification/blob/master/Classification/data/samples/sample_2.jpg?raw=true' width = "200px" height = "200px"/>
+<img src='https://github.com/Natural-Goldfish/CatDogClassification/blob/master/Classification/data/samples/sample_3.jpg?raw=true' width = "200px" height = "200px"/>
+<img src='https://github.com/Natural-Goldfish/CatDogClassification/blob/master/Classification/data/samples/sample_6.jpg?raw=true' width = "200px" height = "200px"/>
+<img src='https://github.com/Natural-Goldfish/CatDogClassification/blob/master/Classification/data/samples/sample_7.jpg?raw=true' width = "200px" height = "200px"/>
+<img src='https://github.com/Natural-Goldfish/CatDogClassification/blob/master/Classification/data/samples/sample_8.jpg?raw=true' width = "200px" height = "200px"/>
+<img src='https://github.com/Natural-Goldfish/CatDogClassification/blob/master/Classification/data/samples/sample_9.jpg?raw=true' width = "200px" height = "200px"/>
+</p>
 
 
 
