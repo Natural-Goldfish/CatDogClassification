@@ -2,21 +2,7 @@
     
 </br></br>
 # How to use my code  
-- In order to use my code, just follow this :  
-```
-    git clone -b master https://github.com/Natural-Goldfish/CatDogClassification.git  
-```
-```
-    cd CatDogClassification\\Classification
-```  
-**❗ You must choose wihch mode you will run between _'train' or 'test'_.**
-```
-    python main.py --mode {}
-```
-- For more specific information how to run my code, you could run :
-```  
-    python main.py -h  
-```
+It will be uploaded, if I solve the problem while uploading the .pth file
 </br></br>
 
 # Requirements
