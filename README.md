@@ -236,7 +236,31 @@ Some test images are randomly selected and shown below :</br></br>
 <img src='https://github.com/Natural-Goldfish/CatDogClassification/blob/master/Classification/data/samples/sample_7.jpg?raw=true' width = "200px" height = "200px"/>
 <img src='https://github.com/Natural-Goldfish/CatDogClassification/blob/master/Classification/data/samples/sample_8.jpg?raw=true' width = "200px" height = "200px"/>
 <img src='https://github.com/Natural-Goldfish/CatDogClassification/blob/master/Classification/data/samples/sample_9.jpg?raw=true' width = "200px" height = "200px"/>
-</p>
+</p>  
+  
+- **Prediction**  
+
+| Model | Sample_0.jpg | Sample_1.jpg | Sample_2.jpg | Sample_3.jpg | Sample_6.jpg | Sample_7.jpg | Sample_8.jpg | Sample_9.jpg |  
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| A | Dog | Cat | Dog | Dog | Dog | Dog | Dog | Dog |
+| B | Dog | Cat | Cat | Dog | Dog | Dog | Dog | Dog |
+| C | Dog | Cat | Dog | Dog | Dog | Dog | Dog | Dog |
+| D | Dog | Cat | Dog | Dog | Dog | Dog | Dog | Dog |
+| E | Dog | Dog | Dog | Dog | Dog | Dog | Dog | Dog |
+| F | Dog | Cat | Cat | Cat | Dog | Dog | Dog | Dog |
+| G | Dog | Cat | Cat | Dog | Dog | Dog | Dog | Dog |  
+
+- **Confidence**  
+
+| Model | Sample_0.jpg | Sample_1.jpg | Sample_2.jpg | Sample_3.jpg | Sample_6.jpg | Sample_7.jpg | Sample_8.jpg | Sample_9.jpg |  
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| A | 63.09% | 87.94% | 54.46% | 78.21% | 64.54% | 51.60% | 57.46% | 71.02% |
+| B | 84.18% | 92.88% | 62.08% | 78.89% | 68.77% | 79.57% | 89.75% | 79.37% |
+| C | 55.61% | 78.30% | 65.22% | 61.41% | 60.04% | 57.00% | 62.38% | 57.72% |
+| D | 54.43% | 59.76% | 59.12% | 53.31% | 50.50% | 51.44% | 52.94% | 61.67% |
+| E | 50.78% | 50.69% | 50.73% | 50.75% | 50.71% | 50.71% | 50.66% | 50.73% |
+| F | 70.99% | 94.51% | 99.99% | 61.75% | 81.49% | 99.96% | 99.97% | 60.99% |
+| G | 87.66% | 96.11% | 99.44% | 99.45% | 99.49% | 87.99% | 81.62% | 97.25% |
 
 
 
