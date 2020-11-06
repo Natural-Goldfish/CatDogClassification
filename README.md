@@ -179,24 +179,17 @@ The formula to check the model's performance is :  ``` ACC = True Positive / Dat
 
 # Train  
 I trained the models for different epochs each with _64 batch size_. You can find this pre-trained model's parameter files in _```'data\models'```_  
-| Model | Epoch | Accuracy |  
+| Model | Epoch | Best Accuracy |  
 |:---:|:---:|:---:|
-| A | 50 |
-| B | 1 : 1|
-| C | 1 : 1|  
-| D | 1 : 1|  
-| E | 1 : 1|  
-| F | 1 : 1|  
-| G | 1 : 1|  
-- If you want to train this model from beginning, you could run :  
-```
-python main.py --mode train
-```
-- If you want to train pre-trained model, you could run :  
-``` 
-python main.py --mode train --model_load_flag --generator_load_name {} --discriminator_load_name {}
-```
+| A | 52 | 77% |
+| B | 81 | 79% |
+| C | 77 | 76% |  
+| D | 88 | 63% |  
+| E | 30 | 53% |  
+| F | 21 | 92% |  
+| G | 43 | 88% |
 </br></br>
+
 
 # Test  
 You can generate images using pre-trained model, which are saved in _```'data\generated_images'```_  
