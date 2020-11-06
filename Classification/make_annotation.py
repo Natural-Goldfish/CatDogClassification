@@ -62,7 +62,7 @@ class MakeAnnotation(object):
         self.anno_data["class_name"] = class_name
         self.image_info["height"] = height
         self.image_info["width"] = width
-        self.anno_data["image_info"] = self.image_info
+        self.anno_data["image_size"] = self.image_info
         self.annotation.append(copy.deepcopy(self.anno_data))
         
 if __name__ == "__main__":

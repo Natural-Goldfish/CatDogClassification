@@ -41,21 +41,18 @@ class CatDogClassifier_3l(torch.nn.Module):
         super().__init__()
         self.layer1 = torch.nn.Sequential(
             torch.nn.Conv2d(3, 32, 3, 1, 1, bias = False),
-            #torch.nn.BatchNorm2d(32),
             torch.nn.ReLU(inplace=True)
         )
         self.max_pool1 = torch.nn.MaxPool2d(2, stride = 2)
 
         self.layer2 = torch.nn.Sequential(
             torch.nn.Conv2d(32, 64, 3, 1, 1, bias = False),
-            #torch.nn.BatchNorm2d(64),
             torch.nn.ReLU(inplace=True)
         )
         self.max_pool2 = torch.nn.MaxPool2d(2, stride = 2)
 
         self.layer3 = torch.nn.Sequential(
             torch.nn.Conv2d(64, 128, 3, 1, 1, bias = False),
-            #torch.nn.BatchNorm2d(128),
             torch.nn.ReLU(inplace=True)
         )
         self.max_pool3 = torch.nn.MaxPool2d(2, stride = 2)
@@ -87,14 +84,12 @@ class CatDogClassifier_4l(torch.nn.Module):
         super().__init__()
         self.layer1 = torch.nn.Sequential(
             torch.nn.Conv2d(3, 32, 3, 1, 1, bias = False),
-            #torch.nn.BatchNorm2d(32),
             torch.nn.ReLU(inplace=True)
         )
         self.max_pool1 = torch.nn.MaxPool2d(2, stride = 2)
 
         self.layer2 = torch.nn.Sequential(
             torch.nn.Conv2d(32, 64, 3, 1, 1, bias = False),
-            #torch.nn.BatchNorm2d(64),
             torch.nn.ReLU(inplace=True)
         )
         self.max_pool2 = torch.nn.MaxPool2d(2, stride = 2)

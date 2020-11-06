@@ -6,7 +6,6 @@ import os
 
 _CUDA_FLAG = torch.cuda.is_available()
 
-    
 def train(args):
     train_dataset = CatDogDataset(mode = "train", img_path = args.img_path, annotation_path = args.annotation_path)
     test_dataset = CatDogDataset(mode = "test", img_path = args.img_path, annotation_path = args.annotation_path)
@@ -72,7 +71,7 @@ def train(args):
             test_accuracy = test_accuracy/len(test_dataloader)
             print("TEST:: EPOCH {}/{} Loss {} Accuracy {}".format(cur_epoch, args.epoch, test_total_loss, test_accuracy))
 
-        model_name = "{}_{}_checkpoint.pth".format(_MODELS[args.models], cur_epoch)
+        model_name = "{}_{}_checkpoint.pth".format(MODELS[args.models], cur_epoch)
         torch.save(model.state_dict(), os.path.join(args.model_path, model_name))
         writer.add_scalars("Loss", {"Train" : train_total_loss, "Test" : test_total_loss}, cur_epoch)
         writer.add_scalars("Accuracy", {"Train" : train_accuracy, "Test" : test_accuracy}, cur_epoch)
