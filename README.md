@@ -192,12 +192,16 @@ The formula to check the model's performance is :  ``` ACC = True Positive / Dat
 </br></br>
 
 # Train  
-I trained the model for _400 epochs_ about the dataset by _64 batch size_. You can find this pre-trained model's parameter file in _```'data\models'```_  
-The update cycle of disciminator model for each batch size is a little bit changed comapred to the paper.  
-| Epoch | Discriminator : Generator |  
-|:---:|:---:|
-| 0 ~ 50 | 1 : 2 |
-| 50 ~ end | 1 : 1|  
+I trained the models for different epochs each with _64 batch size_. You can find this pre-trained model's parameter files in _```'data\models'```_  
+| Model | Epoch | Accuracy |  
+|:---:|:---:|:---:|
+| A | 50 |
+| B | 1 : 1|
+| C | 1 : 1|  
+| D | 1 : 1|  
+| E | 1 : 1|  
+| F | 1 : 1|  
+| G | 1 : 1|  
 - If you want to train this model from beginning, you could run :  
 ```
 python main.py --mode train
