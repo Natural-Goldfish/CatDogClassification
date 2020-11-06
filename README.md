@@ -178,7 +178,7 @@ The formula to check the model's performance is :  ``` ACC = True Positive / Dat
 </br></br>
 
 # Train  
-I trained the models for different epochs each with _64 batch size_. You can find this pre-trained model's parameter files in _```'data\models'```_  
+I trained the models for different epochs each with _64 batch size_. The pre-trained parameter file will be uploaded soon.  
 | Model | Epoch | Best Accuracy |  
 |:---:|:---:|:---:|
 | A | 52 | 77% |
@@ -187,9 +187,44 @@ I trained the models for different epochs each with _64 batch size_. You can fin
 | D | 88 | 63% |  
 | E | 30 | 53% |  
 | F | 21 | 92% |  
-| G | 43 | 88% |
-</br></br>
+| G | 43 | 88% |  
 
+The training loss and accuracy curves for each experiment are shown below:  
+- **2-Layers(A)**  
+<p align="center"><img src = 'https://github.com/Natural-Goldfish/CatDogClassification/blob/master/README/2l_accuracy-52%20epoch.PNG?raw=true' width = "800px" height = "200px"/>
+<img src = 'https://github.com/Natural-Goldfish/CatDogClassification/blob/master/README/2l_loss-52%20epoch.PNG?raw=true' width = "800px" height = "200px"/>
+</p>  
+
+- **3-Layers(B)**  
+<p align="center"><img src = 'https://github.com/Natural-Goldfish/CatDogClassification/blob/master/README/3l_accuracy-85%20epoch.PNG?raw=true' width = "800px" height = "200px"/>
+<img src = 'https://github.com/Natural-Goldfish/CatDogClassification/blob/master/README/3l_loss-85%20epoch.PNG?raw=true' width = "800px" height = "200px"/>
+</p>  
+
+- **4-Layers(C)**  
+<p align="center"><img src = 'https://github.com/Natural-Goldfish/CatDogClassification/blob/master/README/4l_accuracy-77%20epoch.PNG?raw=true' width = "800px" height = "200px"/>
+<img src = 'https://github.com/Natural-Goldfish/CatDogClassification/blob/master/README/4l_loss-77%20epoch.PNG?raw=true' width = "800px" height = "200px"/>
+</p>  
+
+- **5-Layers(D)**  
+<p align="center"><img src = 'https://github.com/Natural-Goldfish/CatDogClassification/blob/master/README/5l_accuracy-90%20epoch.PNG?raw=true' width = "800px" height = "200px"/>
+<img src = 'https://github.com/Natural-Goldfish/CatDogClassification/blob/master/README/5l_loss-90%20epoch.PNG?raw=true' width = "800px" height = "200px"/>
+</p>  
+
+- **6-Layers(E)**  
+<p align="center"><img src = 'https://github.com/Natural-Goldfish/CatDogClassification/blob/master/README/6l_accuracy-31%20epoch.PNG?raw=true' width = "800px" height = "200px"/>
+<img src = 'https://github.com/Natural-Goldfish/CatDogClassification/blob/master/README/6l_loss-31%20epoch.PNG?raw=true' width = "800px" height = "200px"/>
+</p>  
+
+- **Pre-trained VGG16(F)**  
+<p align="center"><img src = 'https://github.com/Natural-Goldfish/CatDogClassification/blob/master/README/Vgg16_accuracy-22%20epoch.PNG?raw=true' width = "800px" height = "200px"/>
+<img src = 'https://github.com/Natural-Goldfish/CatDogClassification/blob/master/README/Vgg16_loss-22%20epoch.PNG?raw=true' width = "800px" height = "200px"/>
+</p>  
+
+- **5-Layers with BN(G)**  
+<p align="center"><img src = 'https://github.com/Natural-Goldfish/CatDogClassification/blob/master/README/5lbn_accuracy-43%20epoch.PNG?raw=true' width = "800px" height = "200px"/>
+<img src = 'https://github.com/Natural-Goldfish/CatDogClassification/blob/master/README/5lbn_loss-43%20epoch.PNG?raw=true' width = "800px" height = "200px"/>
+</p>  
+</br></br>
 
 # Test  
 You can generate images using pre-trained model, which are saved in _```'data\generated_images'```_  
