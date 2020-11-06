@@ -178,7 +178,7 @@ The formula to check the model's performance is :  ``` ACC = True Positive / Dat
 </br></br>
 
 # Experiments  
-I trained the models for different epochs each with _64 batch size_. The highest accuracy of the models and the epoch are recorded below :  
+I trained the models for different epochs each with _64 batch size_. The highest accuracy and the epoch are recorded below :  
 | Model | Epoch | Accuracy |  
 |:---:|:---:|:---:|
 | A | 52 | 77% |
