@@ -177,7 +177,7 @@ I performed data argumentation to make model more stable and to complement the s
 The formula to check the model's performance is :  ``` ACC = True Positive / Dataset ```
 </br></br>
 
-# Train  
+# Experiments  
 I trained the models for different epochs each with _64 batch size_. The pre-trained parameter file will be uploaded soon.  
 | Model | Epoch | Best Accuracy |  
 |:---:|:---:|:---:|
@@ -224,22 +224,6 @@ The training loss and accuracy curves for each experiment are shown below:
 <p align="center"><img src = 'https://github.com/Natural-Goldfish/CatDogClassification/blob/master/README/5lbn_accuracy-43%20epoch.PNG?raw=true' width = "800px" height = "200px"/>
 <img src = 'https://github.com/Natural-Goldfish/CatDogClassification/blob/master/README/5lbn_loss-43%20epoch.PNG?raw=true' width = "800px" height = "200px"/>
 </p>  
-</br></br>
-
-# Test  
-You can generate images using pre-trained model, which are saved in _```'data\generated_images'```_  
-- If you want to see a generated image which pre-trained model make, just run :  
-``` 
-python main.py --mode test
-```  
-- Also you can choice the number of images to generate by changing _**'--generate_numbers'**_, you could run :  
-``` 
-python main.py --mode test --generate_numbers {}
-```  
-- If you want to change the directory as well, you could run :  
-``` 
-python main.py --mode test --generating_model_name {} --image_save_path {} --generate_numbers {}
-```  
 </br></br>
 
 # Results  
