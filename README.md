@@ -173,7 +173,7 @@ I used _SGD optimizer_ with the default momentum values. _Learning rate : 1e-3_.
 I performed data argumentation to make model more stable and to complement the small dataset. Techniques applied here are _resize_, _normalization_, _horizontal flip with random probability_.  
 </br></br>
 
-# Measurement  
+# Metirc  
 - **Accuracy**</br></br>
 The formula to check the model's performance is :  ``` ACC = True Positive / Dataset ```
 </br></br>
