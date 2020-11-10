@@ -175,7 +175,7 @@ I performed data argumentation to make model more stable and to complement the s
 
 # Metirc  
 - **Accuracy**</br></br>
-The formula to check the model's performance is :  ``` ACC = True Positive / Dataset ```
+The formula to check the model's performance is :  ``` ACC = True Positive / (True Positive + False Positive) ```
 </br></br>
 
 # Experiments  
