@@ -170,7 +170,7 @@ I used _SGD optimizer_ with the default momentum values. _Learning rate : 1e-3_.
 </br></br>
 
 - **Data Argumentation**</br></br>
-I performed data argumentation to make model more stable and to complement the small dataset. Techniques applied here are _resize_, _normalization_, _horizontal flip with random probability_.  
+I performed data argumentation to make model more stable and to complement the small dataset. Techniques applied here are _horizontal flip with random probability_, _resize_ and _normalization_.  
 </br></br>
 
 # Metirc  
